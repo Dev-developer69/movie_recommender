@@ -20,7 +20,7 @@ else:
 
 
 
-API_KEY = "api_key"
+API_KEY = st.secrets["TMDB_API_KEY"]
 
 
 st.markdown("""
