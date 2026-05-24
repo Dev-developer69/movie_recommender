@@ -7,6 +7,7 @@ import os
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+movies = pickle.load(open('movies.pkl', 'rb'))
 
 if os.path.exists('similarity.pkl'):
     similarity = pickle.load(open('similarity.pkl', 'rb'))
@@ -17,7 +18,7 @@ else:
     similarity = cosine_similarity(vectors)
 
 
-movies = pickle.load(open('movies.pkl', 'rb'))
+
 
 API_KEY = "api_key"
 
