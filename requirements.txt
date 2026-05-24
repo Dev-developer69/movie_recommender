@@ -3,3 +3,9 @@ numpy
 matplotlib
 seaborn
 nltk
+streamlit
+pandas
+numpy
+scikit-learn
+nltk
+requests
