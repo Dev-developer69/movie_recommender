@@ -3,6 +3,18 @@ import pickle
 import pandas as pd
 import requests
 import time
+import os
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+movies = pickle.load(open('movies.pkl', 'rb'))
+
+if os.path.exists('similarity.pkl'):
+    similarity = pickle.load(open('similarity.pkl', 'rb'))
+else:
+    tfidf = TfidfVectorizer(max_features=5000, stop_words='english')
+    vectors = tfidf.fit_transform(movies['tags']).toarray()
+    similarity = cosine_similarity(vectors)
 
 
 movies = pickle.load(open('movies.pkl', 'rb'))
