@@ -20,7 +20,7 @@ else:
 movies = pickle.load(open('movies.pkl', 'rb'))
 similarity = pickle.load(open('similarity.pkl', 'rb'))
 
-API_KEY = "ae649c6d4d194c3c135e8a5be84a628b"
+API_KEY = "api_key"
 
 
 st.markdown("""
