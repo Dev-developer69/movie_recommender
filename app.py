@@ -38,22 +38,22 @@ st.markdown("""
             
             /* Buttons */
             .stButton button {
-                font-family: 'Poppins', sans-serif;
+                font-family: 'Poppins', sans-serif !important;
                 font-weight: 500;
             }
             /* Recommend Button */
             .stButton button {
-                font-family: 'Poppins', sans-serif;
+                font-family: 'Poppins', sans-serif !important;
                 font-weight: 500;
-                background-color: #FF6B9D;  /* Netflix red */
+                background-color: #FF6B9D;  
                 color: white;
                 border: none;
-                border-radius: 25px;        /* curve */
-                padding: 6px 25px;         /* margin inside */
-                margin-top: 15px;           /* upar se gap */
+                border-radius: 25px;   
+                padding: 6px 25px;       
+                margin-top: 15px;         
                 font-size: 16px;
                 letter-spacing: 1px;
-                transition: 0.3s ease-in-out;           /* smooth hover */
+                transition: 0.3s ease-in-out;         
             }
             
             /* Hover effect */
@@ -62,10 +62,6 @@ st.markdown("""
                 transform: scale(1.15);
                 cursor: pointer;
             }
-
-
-
-
                 </style>
     """, unsafe_allow_html=True)
 
@@ -89,7 +85,8 @@ def recommended_by_movie(movie):
     movie_index = movies[movies['title'] == movie].index[0]
     distances = similarity[movie_index]
     movie_list = sorted(list(enumerate(distances)), reverse=True, key=lambda x: x[1])[1:6]
-    
+    if movie_index.empty:
+        return None
     names = []
     posters = []
     for i in movie_list:
