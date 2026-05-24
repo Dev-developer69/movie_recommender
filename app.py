@@ -97,8 +97,6 @@ def recommended_by_movie(movie):
     movie_index = movies[movies['title'] == movie].index[0]
     distances = similarity[movie_index]
     movie_list = sorted(list(enumerate(distances)), reverse=True, key=lambda x: x[1])[1:6]
-    if movie_index.empty:
-        return None
     names = []
     posters = []
     for i in movie_list:
