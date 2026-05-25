@@ -33,7 +33,7 @@ st.markdown("""
                 background: #1a1a2e !important ; 
             }
             #MainMenu{
-                visibility: hidden !important
+                visibility,header: hidden !important
             }
             h1 {
                 font-family: 'Bebas Neue', cursive !important;
