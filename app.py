@@ -32,8 +32,8 @@ st.markdown("""
             .stApp{
                 background: #1a1a2e !important ; 
             }
-            #MainMenu{
-                visibility,header: hidden !important
+            #MainMenu,header{
+                visibility: hidden !important
             }
             h1 {
                 font-family: 'Bebas Neue', cursive !important;
